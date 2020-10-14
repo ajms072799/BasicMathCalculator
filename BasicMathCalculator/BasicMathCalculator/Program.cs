@@ -13,6 +13,13 @@ namespace BasicMathCalculator
             // Basic Math Calculator App
             PromptingTheMathOperator();
 
+            // Input number
+            Console.Write("Enter the first number: ");
+            int firstNumber = Int32.Parse(Console.ReadLine());
+
+            Console.Write("Enter the second number: ");
+            int secondNumber = Int32.Parse(Console.ReadLine());
+
             // <~ End of the program
             Console.ReadLine();
         }

@@ -8,17 +8,12 @@ namespace BasicMathCalculator
 {
     class Program
     {
+        static int computationResult;
+
         static void Main(string[] args)
         {
             // Basic Math Calculator App
             PromptingTheMathOperator();
-
-            // Input number
-            Console.Write("Enter the first number: ");
-            int firstNumber = Int32.Parse(Console.ReadLine());
-
-            Console.Write("Enter the second number: ");
-            int secondNumber = Int32.Parse(Console.ReadLine());
 
             // <~ End of the program
             Console.ReadLine();
@@ -33,6 +28,36 @@ namespace BasicMathCalculator
             char mathOperator = Convert.ToChar(Console.ReadLine());
 
             return mathOperator;
+        }
+        
+        static int BasicMathComputation(char mathOperator)
+        {
+            // Input number
+            Console.Write("Enter the first number: ");
+            int firstNumber = Int32.Parse(Console.ReadLine());
+
+            Console.Write("Enter the second number: ");
+            int secondNumber = Int32.Parse(Console.ReadLine());
+
+            switch (mathOperator)
+            { 
+                case '+':
+                    computationResult = firstNumber + secondNumber;
+                    break;
+                case '-':
+                    computationResult = firstNumber - secondNumber;           
+                    break;
+                case '*':
+                    computationResult = firstNumber * secondNumber;
+                    break;
+                case '/':
+                    computationResult = firstNumber / secondNumber;
+                    break;
+                default:
+                    Console.WriteLine("Invalid Math Operator!");
+                    break;
+            }
+            return computationResult;
         }
     }
 }

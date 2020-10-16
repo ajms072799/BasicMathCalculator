@@ -24,29 +24,37 @@ namespace BasicMathCalculator
             Console.WriteLine("------------------------------------------------------------");
             Console.WriteLine("\t\t Basic Math Calculator");
             Console.WriteLine("------------------------------------------------------------");
-            Console.Write("Select an Math Operator(+, -, *, /): ");
-            char MathOperator = Convert.ToChar(Console.ReadLine());
 
-            Console.Write("Enter your first number: ");
-            int FirstNumber = Int32.Parse(Console.ReadLine());
-            Console.Write("Enter your second number: ");
-            int SecondNumber = Int32.Parse(Console.ReadLine());
+            int NumberOfTransaction, i;
+            NumberOfTransaction = 1;
+            i = 0;
 
-            switch (MathOperator)
-            { 
-                case '+':
-                    ComputationResult = FirstNumber + SecondNumber;
-                    break;
-                case '-':
-                    ComputationResult = FirstNumber - SecondNumber;
-                    break;
-                case '*':
-                    ComputationResult = FirstNumber * SecondNumber;
-                    break;
-                case '/':
-                    ComputationResult = FirstNumber / SecondNumber;
-                    break;
-            }
+            do 
+            {
+                Console.Write("Select an Math Operator(+, -, *, /): ");
+                char MathOperator = Convert.ToChar(Console.ReadLine());
+
+                Console.Write("Enter your first number: ");
+                int FirstNumber = Int32.Parse(Console.ReadLine());
+                Console.Write("Enter your second number: ");
+                int SecondNumber = Int32.Parse(Console.ReadLine());
+
+                switch (MathOperator)
+                { 
+                    case '+':
+                        ComputationResult = FirstNumber + SecondNumber;
+                        break;
+                    case '-':
+                        ComputationResult = FirstNumber - SecondNumber;
+                        break;
+                    case '*':
+                        ComputationResult = FirstNumber * SecondNumber;
+                        break;
+                    case '/':
+                        ComputationResult = FirstNumber / SecondNumber;
+                        break;
+                }
+            } while(i < NumberOfTransaction);
 
             return ComputationResult;
         }

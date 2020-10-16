@@ -8,26 +8,47 @@ namespace BasicMathCalculator
 {
     class Program
     {
-        static int computationResult;
+        static int ComputationResult;
 
         static void Main(string[] args)
         {
-            // Basic Math Calculator App
-            PromptingTheMathOperator();
+            int ResultOfTheMathComputation = BasicMathComputation();
 
+            Console.WriteLine(ResultOfTheMathComputation);
+            
             // <~ End of the program
             Console.ReadLine();
         }
-
-        static char PromptingTheMathOperator()
+        static int BasicMathComputation()
         {
             Console.WriteLine("------------------------------------------------------------");
             Console.WriteLine("\t\t Basic Math Calculator");
             Console.WriteLine("------------------------------------------------------------");
-            Console.Write("Select an Operator(+, -, *, /): ");
-            char mathOperator = Convert.ToChar(Console.ReadLine());
+            Console.Write("Select an Math Operator(+, -, *, /): ");
+            char MathOperator = Convert.ToChar(Console.ReadLine());
 
-            return mathOperator;
+            Console.Write("Enter your first number: ");
+            int FirstNumber = Int32.Parse(Console.ReadLine());
+            Console.Write("Enter your second number: ");
+            int SecondNumber = Int32.Parse(Console.ReadLine());
+
+            switch (MathOperator)
+            { 
+                case '+':
+                    ComputationResult = FirstNumber + SecondNumber;
+                    break;
+                case '-':
+                    ComputationResult = FirstNumber - SecondNumber;
+                    break;
+                case '*':
+                    ComputationResult = FirstNumber * SecondNumber;
+                    break;
+                case '/':
+                    ComputationResult = FirstNumber / SecondNumber;
+                    break;
+            }
+
+            return ComputationResult;
         }
     }
 }

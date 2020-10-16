@@ -29,35 +29,5 @@ namespace BasicMathCalculator
 
             return mathOperator;
         }
-        
-        static int BasicMathComputation(char mathOperator)
-        {
-            // Input number
-            Console.Write("Enter the first number: ");
-            int firstNumber = Int32.Parse(Console.ReadLine());
-
-            Console.Write("Enter the second number: ");
-            int secondNumber = Int32.Parse(Console.ReadLine());
-
-            switch (mathOperator)
-            { 
-                case '+':
-                    computationResult = firstNumber + secondNumber;
-                    break;
-                case '-':
-                    computationResult = firstNumber - secondNumber;           
-                    break;
-                case '*':
-                    computationResult = firstNumber * secondNumber;
-                    break;
-                case '/':
-                    computationResult = firstNumber / secondNumber;
-                    break;
-                default:
-                    Console.WriteLine("Invalid Math Operator!");
-                    break;
-            }
-            return computationResult;
-        }
     }
 }

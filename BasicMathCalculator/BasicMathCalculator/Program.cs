@@ -54,6 +54,11 @@ namespace BasicMathCalculator
                         ComputationResult = FirstNumber / SecondNumber;
                         break;
                 }
+
+                Console.Write("Do you want another transaction?(Y/n) ");
+                char AnswerForAnotherTransaction = Convert.ToChar(Console.ReadLine());
+
+
             } while(i < NumberOfTransaction);
 
             return ComputationResult;
